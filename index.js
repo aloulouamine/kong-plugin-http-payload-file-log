@@ -6,9 +6,9 @@ const { createWriteStream } = require('fs');
 class HttpPayloadFileLog {
 
     constructor(config) {
-        this.config = config
-        this.writer = createWriteStream(`/home/kong/logs-${this.id}.log`);
+        this.config = config;
         this.id = randomUUID();
+        this.writer = createWriteStream(`/home/kong/logs-${this.id}.log`);
     }
 
 }

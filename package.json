@@ -4,7 +4,8 @@
   "description": "Kong plugin to log http request and response payload in file",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/aloulouamine/kong-plugin-http-payload-file-log#readme",
   "dependencies": {
     "kong-pdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0"
   }
 }
