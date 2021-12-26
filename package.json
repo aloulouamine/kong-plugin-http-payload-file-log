@@ -1,0 +1,27 @@
+{
+  "name": "kong-plugin-http-payload-file-log",
+  "version": "0.1.0",
+  "description": "Kong plugin to log http request and response payload in file",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloulouamine/kong-plugin-http-payload-file-log.git"
+  },
+  "keywords": [
+    "kong",
+    "plugin",
+    "http",
+    "log",
+    "file",
+    "payload"
+  ],
+  "author": "Amine ALOULOU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aloulouamine/kong-plugin-http-payload-file-log/issues"
+  },
+  "homepage": "https://github.com/aloulouamine/kong-plugin-http-payload-file-log#readme"
+}
