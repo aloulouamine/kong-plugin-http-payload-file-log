@@ -6,6 +6,8 @@ services:
   url: http://foggy:8080
   plugins:
   - name: http-payload-file-log
+    config:
+      log_directory: home/kong
   routes:
   - name: foggy
     paths:

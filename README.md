@@ -50,7 +50,7 @@ Response should be something like:
 
 ## TODO
 
-- [ ] implement http payload file logging
+- [x] implement http payload file logging
 - [x] create an integration example (use it as dev env)
 - [ ] write readme documentation
 - [ ] define response and request paylaod log size limit
