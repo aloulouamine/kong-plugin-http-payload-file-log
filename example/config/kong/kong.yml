@@ -1,0 +1,12 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+- name: foggy
+  url: http://foggy:8080
+  plugins:
+  - name: http-payload-file-log
+  routes:
+  - name: foggy
+    paths:
+    - /foggy

@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  # kong instance 
+  kong:
+    build:
+      context: .
+      dockerfile: example/Dockerfile
+    environment:
+      KONG_DATABASE: 'off'
+      KONG_DECLARATIVE_CONFIG: /etc/kong/kong.yml
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001, 0.0.0.0:8444 ssl
+    ports:
+      - 9000:8000
+      - 9443:8443
+      - 9001:8001
+      - 9444:8444
+    networks:
+      - kong_network
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./logs:/home/kong:rw
+
+  # example api
+  foggy:
+    image: aloulouamine/foggy
+    healthcheck:
+      test: "curl --fail --silent foggy:8080/actuator/health | grep UP || exit 1"
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks: 
+      - kong_network
+
+networks:
+  kong_network:
+    external: true

@@ -1,2 +1,5 @@
 # plugin dependencies
 node_modules
+
+# logs folder
+logs
